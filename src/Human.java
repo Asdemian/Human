@@ -40,6 +40,7 @@ public class Human {
         }
     }
 
+
     @Override
     public String toString() {
         return " Привет! Меня зовут " + name + ". Я из города " + town +
