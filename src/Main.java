@@ -3,29 +3,19 @@ import java.time.LocalDate;
 public class Main {
     public static void main(String[] args) {
 
-        Human maksim = new Human();
-        maksim.yearOfBirth = LocalDate.now().getYear() - 35;
-        maksim.town = "Минск";
-        maksim.name = "Максим";
-        maksim.job = "бренд-менеджером";
+        Human maksim = new Human(LocalDate.now().getYear() - 35,
+                "Минск", "Максим", "бренд-менеджером");
 
-        Human ania = new Human();
-        ania.yearOfBirth = LocalDate.now().getYear() - 29;
-        ania.town = "Москва";
-        ania.name = "Аня";
-        ania.job = "методистом образовательных программ";
+        Human ania = new Human(LocalDate.now().getYear() - 29,
+                "Москва", "Аня",
+                "методистом образовательных программ");
 
-        Human katia = new Human();
-        katia.yearOfBirth = LocalDate.now().getYear() - 28;
-        katia.town = "Калининград";
-        katia.name = "Катя";
-        katia.job = "продакт-менеджером";
+        Human katia = new Human(LocalDate.now().getYear() - 28,
+                "Калининград", "Катя", "продакт-менеджером");
 
-        Human artem = new Human();
-        artem.yearOfBirth = LocalDate.now().getYear() - 27;
-        artem.town = "Москва";
-        artem.name = "Артем";
-        artem.job = "директором по развитию бизнеса";
+        Human artem = new Human(LocalDate.now().getYear() - 27,
+                "Москва", "Артем",
+                "директором по развитию бизнеса");
 
         System.out.println(maksim);
         System.out.println(ania);
