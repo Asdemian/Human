@@ -17,9 +17,14 @@ public class Main {
                 "Москва", "Артем",
                 "директором по развитию бизнеса");
 
+        Human vladimir = new Human(LocalDate.now().getYear() - 21,
+                "Казань", "Владимир",
+                null);
+
         System.out.println(maksim);
         System.out.println(ania);
         System.out.println(katia);
         System.out.println(artem);
+        System.out.println(vladimir);
     }
 }
