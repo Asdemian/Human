@@ -7,9 +7,21 @@ public class Human {
 
     public Human(int yearOfBirth, String name, String town, String job) {
         this.yearOfBirth = yearOfBirth;
+        if (yearOfBirth < 0 ) {
+            this.yearOfBirth = 0;
+        }
         this.name = name;
+        if (this.name == null) {
+            this.name = "Информация не указана";
+        }
         this.town = town;
+        if (this.town == null) {
+            this.town = "Информация не указана";
+                    }
         this.job = job;
+        if (this.job == null) {
+            this.job = "Информация не указана";
+                    }
     }
 
     @Override
