@@ -15,8 +15,10 @@ public class Car {
     private String registrationNumber; // регистр номер
     private final int numberOfSeats;  // количество мест
     private boolean summerTires; // резина
+    private Key key;
+    private Insurance insurance;
 
-      public Car(String brand, String model, double engineVolume, String color,
+    public Car(String brand, String model, double engineVolume, String color,
                int productionYear, String productionCountry, String transmission, String bodyType,
                String registrationNumber, int numberOfSeats) {
         if (brand == null || brand.isEmpty()) {
@@ -53,6 +55,30 @@ public class Car {
             numberOfSeats = 5;
         }
         this.numberOfSeats = numberOfSeats;
+        setKey(null);
+        setInsurance(null);
+    }
+
+    public Key getKey() {
+        return key;
+    }
+
+    public void setKey(Key key) {
+        if (key == null) {
+            key = new Key(false, false);
+        }
+        this.key = key;
+    }
+
+    public Insurance getInsurance() {
+        return insurance;
+    }
+
+    public void setInsurance(Insurance insurance) {
+        if (insurance == null) {
+            this.insurance = new Insurance(null, 6000, null);
+        }
+        this.insurance = insurance;
     }
 
     public String getBrand() {
@@ -133,11 +159,94 @@ public class Car {
                 + engineVolume + ", Коробка передачь (" + transmission + ')' +
                 ", Тип кузова (" + bodyType + ')' + ", Регистрационный номер: ("
                 + registrationNumber + ')' + ", Количество мест- " + numberOfSeats +
-                ", Тип резины " + summerTires + '.';
+                ", Тип резины (" + summerTires + "). Запуск " + key + " Страховка "
+                + insurance ;
     }
 
     public void print() {
         System.out.println(this);
+    }
+
+    public static class Key {
+        private final boolean remoteRun;
+        private final boolean withouKeyAccess;
+
+        public Key(boolean remoteRun, boolean withouKeyAccess) {
+            this.remoteRun = remoteRun;
+            this.withouKeyAccess = withouKeyAccess;
+        }
+
+        public boolean isRemoteRun() {
+            return remoteRun;
+        }
+
+        public boolean isWithouKeyAccess() {
+            return withouKeyAccess;
+        }
+
+        @Override
+        public String toString() {
+            return "(" +
+                    " удаленный " + remoteRun +
+                    " бесключевой " + withouKeyAccess +
+                    ')';
+        }
+    }
+
+    public static class Insurance {
+        private final LocalDate expireDate;
+        private final int cost;
+        private final String number;
+
+        public Insurance(LocalDate expireDate, int cost, String number) {
+            if (expireDate == null) {
+                expireDate = LocalDate.now().plusDays(365);
+            }
+            this.expireDate = expireDate;
+            if (cost <= 0) {
+                cost = 6000;
+            }
+            this.cost = cost;
+            if (number == null || number.isEmpty()) {
+                number = "XXXXXXXXX";
+            }
+            this.number = number;
+        }
+
+        public void printExpired() {
+            boolean expired = expireDate.isAfter(LocalDate.now());
+            if (expired) {
+                System.out.println("Страховка закончилась");
+            }
+        }
+
+        public void printNumber() {
+            boolean correct = number.length() == 9;
+            if (!correct) {
+                System.out.println("Номер страховки некорректный!");
+            }
+        }
+
+        public LocalDate getExpireDate() {
+            return expireDate;
+        }
+
+        public int getCost() {
+            return cost;
+        }
+
+        public String getNumber() {
+            return number;
+        }
+
+        @Override
+        public String toString() {
+            return "(" +
+                    " Срок действия " + expireDate +
+                    " Стоимость " + cost +
+                    " Номер страховки " + number +
+                    ')';
+        }
     }
 }
 
