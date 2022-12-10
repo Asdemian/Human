@@ -76,7 +76,7 @@ public class Car {
 
     public void setInsurance(Insurance insurance) {
         if (insurance == null) {
-            this.insurance = new Insurance(null, 6000, null);
+            insurance = new Insurance(null, 6000, null);
         }
         this.insurance = insurance;
     }

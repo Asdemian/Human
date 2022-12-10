@@ -34,7 +34,6 @@ public class Main {
                 "России", "АКПП",
                 "Флитбэк", "O258OO277",
                 4);
-
         Car audi = new Car("Audi", "A8 50 L TDI quattro",
                 3.0, "черного", 2020,
                 "Германии", null, null,
