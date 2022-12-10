@@ -6,7 +6,7 @@ import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 public class Main {
     public static void main(String[] args) {
 
-        Human maksim = new Human(LocalDate.now().getYear() - 35,
+ /*       Human maksim = new Human(LocalDate.now().getYear() - 35,
                 "Максим", "Минск", "бренд-менеджером");
 
         Human ania = new Human(LocalDate.now().getYear() - 29,
@@ -28,7 +28,7 @@ public class Main {
         System.out.println(katia);
         System.out.println(artem);
         System.out.println(vladimir);
-
+*/
         Car lada = new Car("Lada", "Grande",
                 1.7, "Желтого", 2015,
                 "России", "АКПП",
@@ -62,7 +62,7 @@ public class Main {
         System.out.println(bmw);
         System.out.println(kia);
         System.out.println(hyundai);
-
+/*
         Flower rosa = new Flower("Роза", "Голандии",
                 35.59);
         Flower chrysanthemum = new Flower("Хризантема",
@@ -82,7 +82,7 @@ public class Main {
                 }
         );
         bouquet.bouquetOfFlowers();
-
+*/
 
     }
 }

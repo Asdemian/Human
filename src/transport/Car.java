@@ -2,14 +2,11 @@ package transport;
 
 import java.time.LocalDate;
 
-public class Car {
+public class Car extends Transport {
 
-    private final String brand;
-    private final String model;
+
+    private static final double maximumMovementSpeed = 50;
     private double engineVolume;
-    private String color;
-    private final int productionYear;
-    private final String productionCountry;
     private String transmission; // коробка передач
     private final String bodyType;  // тип кузова
     private String registrationNumber; // регистр номер
@@ -18,31 +15,21 @@ public class Car {
     private Key key;
     private Insurance insurance;
 
+
     public Car(String brand, String model, double engineVolume, String color,
                int productionYear, String productionCountry, String transmission, String bodyType,
                String registrationNumber, int numberOfSeats) {
-        if (brand == null || brand.isEmpty()) {
-            brand = "default";
-        }
-        this.brand = brand;
-        if (model == null) {
-            model = "default";
-        }
-        this.model = model;
+        super(brand, model, productionYear,
+        productionCountry, color, maximumMovementSpeed);
+        //this.brand = brand;
+        //this.model = model;
         setEngineVolume(engineVolume);
         setTransmission(transmission);
-        if (color == null) {
-            color = "белый";
-        }
-        this.color = color;
-        if (productionYear < 0) {
-            productionYear = 2000;
-        }
-        this.productionYear = productionYear;
-        if (productionCountry == null) {
-            productionCountry = "default";
-        }
-        this.productionCountry = productionCountry;
+
+        // this.color = color;
+        // this.productionYear = productionYear;
+
+        //this.productionCountry = productionCountry;
         if (bodyType == null || bodyType.isEmpty()) {
             bodyType = "Седан";
         }
@@ -81,22 +68,6 @@ public class Car {
         this.insurance = insurance;
     }
 
-    public String getBrand() {
-        return brand;
-    }
-
-    public String getModel() {
-        return model;
-    }
-
-    public int getProductionYear() {
-        return productionYear;
-    }
-
-    public String getProductionCountry() {
-        return productionCountry;
-    }
-
     public String getBodyType() {
         return bodyType;
     }
@@ -114,10 +85,6 @@ public class Car {
             engineVolume = 1.5;
         }
         this.engineVolume = engineVolume;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
     }
 
     public void setTransmission(String transmission) {
@@ -154,13 +121,13 @@ public class Car {
 
     @Override
     public String toString() {
-        return brand + " " + model + " , " + productionYear + " год выпуска, сборка в "
-                + productionCountry + ", " + color + " цвета, объем двигателя "
+        return getBrand() + " " + getModel() + " , " + getProductionYear() + " год выпуска, сборка в "
+                + getProductionCountry() + ", " + getColor() + " цвета, объем двигателя "
                 + engineVolume + ", Коробка передачь (" + transmission + ')' +
                 ", Тип кузова (" + bodyType + ')' + ", Регистрационный номер: ("
                 + registrationNumber + ')' + ", Количество мест- " + numberOfSeats +
                 ", Тип резины (" + summerTires + "). Запуск " + key + " Страховка "
-                + insurance ;
+                + insurance;
     }
 
     public void print() {
