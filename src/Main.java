@@ -1,6 +1,8 @@
 import transport.Car;
+import transport.Train;
 
 import java.time.LocalDate;
+import java.time.Month;
 import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 
 public class Main {
@@ -29,10 +31,10 @@ public class Main {
         System.out.println(artem);
         System.out.println(vladimir);
 */
-        Car lada = new Car("Lada", "Grande",
+ /*       Car lada = new Car("Lada", "Grande",
                 1.7, "Желтого", 2015,
                 "России", "АКПП",
-                "Флитбэк", "O258OO277",
+                "Флитбэк", "О258OO277",
                 4);
         Car audi = new Car("Audi", "A8 50 L TDI quattro",
                 3.0, "черного", 2020,
@@ -62,6 +64,8 @@ public class Main {
         System.out.println(bmw);
         System.out.println(kia);
         System.out.println(hyundai);
+
+  */
 /*
         Flower rosa = new Flower("Роза", "Голандии",
                 35.59);
@@ -83,6 +87,20 @@ public class Main {
         );
         bouquet.bouquetOfFlowers();
 */
+
+        Train lastochka = new Train("Ласточка", "В-901",
+                2011, "России", null,
+                301,1500, 1,
+                "Белорусского вокзал",
+                "Минск-Пассажирский", 11);
+
+        Train leningrad = new Train("Ленинград", "D-125",
+                2019, "России", null,
+                270,1700, 2,
+                "Ленинградского вокзала",
+                "Ленинград-Пассажирский", 8);
+        System.out.println(lastochka);
+        System.out.println(leningrad);
 
     }
 }

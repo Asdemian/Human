@@ -4,8 +4,6 @@ import java.time.LocalDate;
 
 public class Car extends Transport {
 
-
-    private static final double maximumMovementSpeed = 50;
     private double engineVolume;
     private String transmission; // коробка передач
     private final String bodyType;  // тип кузова
@@ -20,7 +18,7 @@ public class Car extends Transport {
                int productionYear, String productionCountry, String transmission, String bodyType,
                String registrationNumber, int numberOfSeats) {
         super(brand, model, productionYear,
-        productionCountry, color, maximumMovementSpeed);
+        productionCountry, color, 0);
         //this.brand = brand;
         //this.model = model;
         setEngineVolume(engineVolume);
@@ -95,6 +93,7 @@ public class Car extends Transport {
     }
 
     public void setSummerTires(boolean summerTires) {
+
         this.summerTires = summerTires;
     }
 
@@ -102,23 +101,23 @@ public class Car extends Transport {
         setSummerTires(!summerTires);
     }
 
-    public boolean isValidNumber() {
+   public boolean isValidNumber() {
         // x000xx000
-        boolean result = true;
+         boolean result = true;
 
-        result = result && registrationNumber.length() == 9;
-        result = result && Character.isLetter(registrationNumber.charAt(0))
-                && Character.isLetter(registrationNumber.charAt(4))
-                && Character.isLetter(registrationNumber.charAt(5));
-        result = result && Character.isDigit(registrationNumber.charAt(1))
-                && Character.isDigit(registrationNumber.charAt(2))
-                && Character.isDigit(registrationNumber.charAt(3))
-                && Character.isDigit(registrationNumber.charAt(6))
-                && Character.isDigit(registrationNumber.charAt(7))
-                && Character.isDigit(registrationNumber.charAt(8));
+            result = result && registrationNumber.length() == 9;
+            result = result && Character.isLetter(registrationNumber.charAt(0))
+                    && Character.isLetter(registrationNumber.charAt(4))
+                    && Character.isLetter(registrationNumber.charAt(5));
+            result = result && Character.isDigit(registrationNumber.charAt(1))
+                    && Character.isDigit(registrationNumber.charAt(2))
+                    && Character.isDigit(registrationNumber.charAt(3))
+                    && Character.isDigit(registrationNumber.charAt(6))
+                    && Character.isDigit(registrationNumber.charAt(7))
+                    && Character.isDigit(registrationNumber.charAt(8));
+
         return result;
     }
-
     @Override
     public String toString() {
         return getBrand() + " " + getModel() + " , " + getProductionYear() + " год выпуска, сборка в "

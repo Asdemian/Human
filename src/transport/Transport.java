@@ -1,17 +1,17 @@
 package transport;
 
-public class Transport {
+public abstract class Transport {
 
     private final String brand;
     private final String model;
     private final int productionYear;
     private final String productionCountry;
     private String color;
-    private double MaximumMovementSpeed;
+    private int MaximumMovementSpeed;
 
     public Transport(String brand, String model, int productionYear,
                      String productionCountry, String color,
-                     double maximumMovementSpeed) {
+                     int maximumMovementSpeed) {
         if (brand == null || brand.isEmpty()) {
             brand = "default";
         }
@@ -34,6 +34,7 @@ public class Transport {
         this.color = color;
         MaximumMovementSpeed = maximumMovementSpeed;
     }
+
     public String getBrand() {
         return brand;
     }
@@ -62,19 +63,18 @@ public class Transport {
         this.color = color;
     }
 
-    public void setMaximumMovementSpeed(double maximumMovementSpeed) {
+    public void setMaximumMovementSpeed(int maximumMovementSpeed) {
         MaximumMovementSpeed = maximumMovementSpeed;
     }
 
     @Override
     public String toString() {
-        return "Transport{" +
-                "brand='" + brand + '\'' +
-                ", model='" + model + '\'' +
-                ", productionYear=" + productionYear +
-                ", productionCountry='" + productionCountry + '\'' +
-                ", color='" + color + '\'' +
-                ", MaximumMovementSpeed=" + MaximumMovementSpeed +
-                '}';
+        return "<<" +
+                "  " + brand +
+                " >> модель " + model +
+                " год выпуска " + productionYear +
+                " в " + productionCountry +
+                " цвет " + color +
+                " скорость " + MaximumMovementSpeed + " км/ч ";
     }
 }
