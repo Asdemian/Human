@@ -14,20 +14,17 @@ public class Car extends Transport {
     private Insurance insurance;
 
 
-    public Car(String brand, String model, double engineVolume, String color,
-               int productionYear, String productionCountry, String transmission, String bodyType,
-               String registrationNumber, int numberOfSeats) {
-        super(brand, model, productionYear,
-        productionCountry, color, 0);
-        //this.brand = brand;
-        //this.model = model;
+    public Car(String brand, String model, int productionYear,
+               String productionCountry, String color, int maximumMovementSpeed,
+               String fuel, double engineVolume, String transmission, String bodyType,
+               String registrationNumber, int numberOfSeats, boolean summerTires,
+               Key key, Insurance insurance, double fuelPercentage) {
+        super(brand, model, productionYear, productionCountry, color,
+                maximumMovementSpeed, fuel, fuelPercentage);
+
         setEngineVolume(engineVolume);
         setTransmission(transmission);
 
-        // this.color = color;
-        // this.productionYear = productionYear;
-
-        //this.productionCountry = productionCountry;
         if (bodyType == null || bodyType.isEmpty()) {
             bodyType = "Седан";
         }
@@ -101,27 +98,35 @@ public class Car extends Transport {
         setSummerTires(!summerTires);
     }
 
-   public boolean isValidNumber() {
+    public boolean isValidNumber() {
         // x000xx000
-         boolean result = true;
+        boolean result = true;
 
-            result = result && registrationNumber.length() == 9;
-            result = result && Character.isLetter(registrationNumber.charAt(0))
-                    && Character.isLetter(registrationNumber.charAt(4))
-                    && Character.isLetter(registrationNumber.charAt(5));
-            result = result && Character.isDigit(registrationNumber.charAt(1))
-                    && Character.isDigit(registrationNumber.charAt(2))
-                    && Character.isDigit(registrationNumber.charAt(3))
-                    && Character.isDigit(registrationNumber.charAt(6))
-                    && Character.isDigit(registrationNumber.charAt(7))
-                    && Character.isDigit(registrationNumber.charAt(8));
+        result = result && registrationNumber.length() == 9;
+        result = result && Character.isLetter(registrationNumber.charAt(0))
+                && Character.isLetter(registrationNumber.charAt(4))
+                && Character.isLetter(registrationNumber.charAt(5));
+        result = result && Character.isDigit(registrationNumber.charAt(1))
+                && Character.isDigit(registrationNumber.charAt(2))
+                && Character.isDigit(registrationNumber.charAt(3))
+                && Character.isDigit(registrationNumber.charAt(6))
+                && Character.isDigit(registrationNumber.charAt(7))
+                && Character.isDigit(registrationNumber.charAt(8));
 
         return result;
     }
+
+    @Override
+    public void refill() {
+        System.out.println("Автомобиль запрален топливом " + getFuel());
+        setFuelPercentage(100);
+    }
+
     @Override
     public String toString() {
-        return getBrand() + " " + getModel() + " , " + getProductionYear() + " год выпуска, сборка в "
-                + getProductionCountry() + ", " + getColor() + " цвета, объем двигателя "
+        return getBrand() + " " + getModel() + " , " + getProductionYear() +
+                " год выпуска, сборка в " + getProductionCountry() + ", "
+                + getColor() + " цвета, объем двигателя "
                 + engineVolume + ", Коробка передачь (" + transmission + ')' +
                 ", Тип кузова (" + bodyType + ')' + ", Регистрационный номер: ("
                 + registrationNumber + ')' + ", Количество мест- " + numberOfSeats +

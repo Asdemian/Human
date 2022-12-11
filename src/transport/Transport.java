@@ -8,10 +8,12 @@ public abstract class Transport {
     private final String productionCountry;
     private String color;
     private int MaximumMovementSpeed;
+    private String fuel;
+    private double fuelPercentage;
 
     public Transport(String brand, String model, int productionYear,
                      String productionCountry, String color,
-                     int maximumMovementSpeed) {
+                     int maximumMovementSpeed, String fuel, double fuelPercentage) {
         if (brand == null || brand.isEmpty()) {
             brand = "default";
         }
@@ -32,7 +34,9 @@ public abstract class Transport {
             color = "белый";
         }
         this.color = color;
-        MaximumMovementSpeed = maximumMovementSpeed;
+        setMaximumMovementSpeed(maximumMovementSpeed);
+        this.fuel = fuel;
+        this.fuelPercentage = fuelPercentage;
     }
 
     public String getBrand() {
@@ -64,8 +68,29 @@ public abstract class Transport {
     }
 
     public void setMaximumMovementSpeed(int maximumMovementSpeed) {
-        MaximumMovementSpeed = maximumMovementSpeed;
+        if (maximumMovementSpeed <= 0) {
+            maximumMovementSpeed = 120;
+        }
+        this.MaximumMovementSpeed = maximumMovementSpeed;
     }
+
+    public String getFuel() {
+        return fuel;
+    }
+
+    public void setFuel(String fuel) {
+        this.fuel = fuel;
+    }
+
+    public double getFuelPercentage() {
+        return fuelPercentage;
+    }
+
+    public void setFuelPercentage(double fuelPercentage) {
+        this.fuelPercentage = fuelPercentage;
+    }
+
+    public abstract void refill();
 
     @Override
     public String toString() {
@@ -75,6 +100,7 @@ public abstract class Transport {
                 " год выпуска " + productionYear +
                 " в " + productionCountry +
                 " цвет " + color +
-                " скорость " + MaximumMovementSpeed + " км/ч ";
+                " скорость " + MaximumMovementSpeed + " км/ч топливо ("
+                +fuel+ ") заправлен на " +fuelPercentage+ " %";
     }
 }

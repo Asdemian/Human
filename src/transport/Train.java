@@ -10,9 +10,10 @@ public class Train extends Transport {
 
     public Train(String brand, String model, int productionYear,
                  String productionCountry, String color, int maximumMovementSpeed,
-                 int cost, int time, String departureStation, String finalStop, int wagons) {
+                 String fuel, double fuelPercentage, int cost, int time, String departureStation,
+                 String finalStop, int wagons) {
         super(brand, model, productionYear, productionCountry, color,
-                maximumMovementSpeed);
+                maximumMovementSpeed, fuel, fuelPercentage);
         this.cost = cost;
         this.time = time;
         this.departureStation = departureStation;
@@ -58,6 +59,12 @@ public class Train extends Transport {
 
     public void setWagons(int wagons) {
         this.wagons = wagons;
+    }
+
+    @Override
+    public void refill() {
+        System.out.println("Поезд заправлен топливом (" +getFuel()+ ")");
+        setFuelPercentage(100);
     }
 
     @Override

@@ -91,32 +91,34 @@ public class Main {
         bouquet.bouquetOfFlowers();
 */
 
-    /*    Train lastochka = new Train("Ласточка", "В-901",
+        Train lastochka = new Train("Ласточка", "В-901",
                 2011, "России", null,
-                301, 1500, 1,
+                301, "дизель",
+                69,1500, 1,
                 "Белорусского вокзал",
                 "Минск-Пассажирский", 11);
 
         Train leningrad = new Train("Ленинград", "D-125",
                 2019, "России", null,
-                270, 1700, 2,
-                "Ленинградского вокзала",
+                270,"дизель", 81,
+                1700, 2, "Ленинградского вокзала",
                 "Ленинград-Пассажирский", 8);
         System.out.println(lastochka);
         System.out.println(leningrad);
-     */
 
         Bus paz = new Bus("Автобус", "ПАЗ-3205",
                 1986, "России", null,
-                90);
+                90, "бензин",65);
 
         Bus liaz = new Bus("Автобус", "ЛиАЗ-5292",
                 1989, "России",
-                "зеленый", 110);
+                "зеленый", 110,
+                "бензин",50);
 
         Bus nefaz = new Bus("Автобус", "НЕФАЗ-5299",
                 2000, "России",
-                "синий", 70);
+                "синий", 70,
+                "бензин",90);
 
         System.out.println(paz);
         System.out.println(liaz);
