@@ -1,10 +1,11 @@
 package transport;
 
-import java.time.LocalDate;
-
 public class Car extends Transport {
+    public Car(String brand, String model, double engineVolume) {
+        super(brand, model, engineVolume);
+    }
 
-    private double engineVolume;
+ /*   private double engineVolume;
     private String transmission; // коробка передач
     private final String bodyType;  // тип кузова
     private String registrationNumber; // регистр номер
@@ -219,6 +220,24 @@ public class Car extends Transport {
                     ')';
         }
     }
+
+  */
+
+    @Override
+    public void start() {
+        System.out.println("Автомобиль (" + getBrand() + ") (" + getModel() + ") начал движение");
+    }
+
+    @Override
+    public void stop() {
+        System.out.println("Автомобиль (" + getBrand() + ") (" + getModel() + ") остановился");
+    }
+
+    @Override
+    public String toString() {
+        return " Автомобиль " + super.toString();
+    }
 }
+
 
 
