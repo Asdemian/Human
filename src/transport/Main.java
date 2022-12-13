@@ -16,11 +16,12 @@ public class Main {
         Truck volvo = new Truck("Volvo", "FH16", 4.7);
         Truck scania = new Truck("Scania", "R730 V8", 4.5);
         Truck man = new Truck("MAN", "TGX", 5.5);
-        sorento2021.start();
-        sorento2021.stop();
-        liaz5292.start();
-        liaz5292.stop();
-        mercedesBenz.start();
-        mercedesBenz.stop();
+
+        sorento2021.pitStop();
+
+        liaz5292.pitStop();
+
+        mercedesBenz.pitStop();
+
     }
 }

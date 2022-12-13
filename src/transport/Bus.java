@@ -1,6 +1,6 @@
 package transport;
 
-public class Bus extends Transport {
+public class Bus extends Transport implements Competing {
 
 
     public Bus(String brand, String model, double engineVolume) {
@@ -21,10 +21,10 @@ public class Bus extends Transport {
         }
 
       */
- @Override
- public void start() {
-     System.out.println("Автобус (" + getBrand() + ") (" + getModel() + ") начал движение");
- }
+    @Override
+    public void start() {
+        System.out.println("Автобус (" + getBrand() + ") (" + getModel() + ") начал движение");
+    }
 
     @Override
     public void stop() {
@@ -34,5 +34,20 @@ public class Bus extends Transport {
     @Override
     public String toString() {
         return "Автобус " + super.toString();
+    }
+
+    @Override
+    public void pitStop() {
+        System.out.println("Автобус проехал пит-стоп");
+    }
+
+    @Override
+    public int bestLoopTime() {
+        return (int) (Math.random() * 15);
+    }
+
+    @Override
+    public int maxSpeed() {
+        return (int) (Math.random() * 100);
     }
 }
