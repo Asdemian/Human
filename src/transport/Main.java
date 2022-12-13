@@ -34,12 +34,12 @@ public class Main {
 
 
         semen.refill(hondaCRV);
-        semen.printConclusion(kiaSportage);
+        semen.printConclusion(hondaCRV);
 
         evlampiy.refill(scania);
-        evlampiy.printConclusion(man);
+        evlampiy.printConclusion(scania);
 
         prohor.refill(paz);
-        prohor.printConclusion(nefaz);
+        prohor.printConclusion(paz);
     }
 }
