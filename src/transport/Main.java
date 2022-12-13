@@ -1,5 +1,10 @@
 package transport;
 
+
+import transport.Driver.DriverB;
+import transport.Driver.DriverC;
+import transport.Driver.DriverD;
+
 public class Main {
     public static void main(String[] args) {
         Car sorento2021 = new Car("KIA", "Sorento2021", 2.5);
@@ -23,5 +28,18 @@ public class Main {
 
         mercedesBenz.pitStop();
 
+        DriverB semen = new DriverB("Семен", true, 7);
+        DriverC evlampiy = new DriverC("Евлампий", true, 20);
+        DriverD prohor = new DriverD("Прохор", true, 15);
+
+
+        semen.refill(hondaCRV);
+        semen.printConclusion(kiaSportage);
+
+        evlampiy.refill(scania);
+        evlampiy.printConclusion(man);
+
+        prohor.refill(paz);
+        prohor.printConclusion(nefaz);
     }
 }

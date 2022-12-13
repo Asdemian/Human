@@ -23,12 +23,14 @@ public class Bus extends Transport implements Competing {
       */
     @Override
     public void start() {
-        System.out.println("Автобус (" + getBrand() + ") (" + getModel() + ") начал движение");
+        System.out.println("Автобус (" + getBrand() + ") " +
+                "(" + getModel() + ") начал движение");
     }
 
     @Override
     public void stop() {
-        System.out.println("Автобус (" + getBrand() + ") (" + getModel() + ") остановился");
+        System.out.println("Автобус (" + getBrand() + ")" +
+                " (" + getModel() + ") остановился");
     }
 
     @Override
