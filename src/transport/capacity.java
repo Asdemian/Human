@@ -1,6 +1,6 @@
 package transport;
 
-public enum Capacity {
+public enum capacity {
 
     ESPECIALLY_SMALL(0, 10),
     SMALL(10, 25),
@@ -11,7 +11,7 @@ public enum Capacity {
     private final int from;
     private final int to;
 
-    Capacity(int from, int to) {
+    capacity(int from, int to) {
         this.from = from;
         this.to = to;
     }

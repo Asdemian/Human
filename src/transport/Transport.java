@@ -29,11 +29,15 @@ public abstract class Transport {
         return " " +
                 " Брэнд (" + brand + ')' +
                 " Модель (" + model + ')' +
-                " Объем двигателя (" + engineVolume +
-                ')';
+                " Объем двигателя (" + engineVolume + ')';
     }
 
     public abstract void start();
+
     public abstract void stop();
+
+    public void printType() {
+
+    }
 
 }

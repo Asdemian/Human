@@ -1,8 +1,9 @@
 package transport;
 
-public class Truck extends Transport implements Competing{
+public class Truck extends Transport implements Competing {
 
     private WeightСapacity weightСapacity;
+
     public Truck(String brand, String model, double engineVolume, WeightСapacity weightСapacity) {
         super(brand, model, engineVolume);
         this.weightСapacity = weightСapacity;
@@ -29,8 +30,14 @@ public class Truck extends Transport implements Competing{
     }
 
     @Override
-    public String toString() {
-        return " Грузовик " + super.toString();
+    public void printType() {
+        if (weightСapacity == null) {
+            System.out.println("Данных по грузовику недостаточно");
+        } else {
+            String from = weightСapacity.getFrom() == null ? " " : " от " + weightСapacity.getFrom() + " ";
+            String to = weightСapacity.getFrom() == null ? " " : " до " + weightСapacity.getTo() + " ";
+            System.out.println(" Грузоподьемность грузовика " + from + to);
+        }
     }
 
     @Override
@@ -46,5 +53,12 @@ public class Truck extends Transport implements Competing{
     @Override
     public int maxSpeed() {
         return (int) (Math.random() * 150);
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() +
+                " грузоподьемность грузовика (" + weightСapacity +
+                ") ";
     }
 }
