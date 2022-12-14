@@ -2,8 +2,18 @@ package transport;
 
 public class Truck extends Transport implements Competing{
 
-    public Truck(String brand, String model, double engineVolume) {
+    private WeightСapacity weightСapacity;
+    public Truck(String brand, String model, double engineVolume, WeightСapacity weightСapacity) {
         super(brand, model, engineVolume);
+        this.weightСapacity = weightСapacity;
+    }
+
+    public WeightСapacity getWeightСapacity() {
+        return weightСapacity;
+    }
+
+    public void setWeightСapacity(WeightСapacity weightСapacity) {
+        this.weightСapacity = weightСapacity;
     }
 
     @Override

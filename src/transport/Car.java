@@ -1,11 +1,22 @@
 package transport;
 
 public class Car extends Transport implements Competing{
-    public Car(String brand, String model, double engineVolume) {
+
+    private BodyType bodyType;
+    public Car(String brand, String model, double engineVolume, BodyType bodyType) {
         super(brand, model, engineVolume);
+        this.bodyType = bodyType;
     }
 
- /*   private double engineVolume;
+    public BodyType getBodyType() {
+        return bodyType;
+    }
+
+    public void setBodyType(BodyType bodyType) {
+        this.bodyType = bodyType;
+    }
+
+/*   private double engineVolume;
     private String transmission; // коробка передач
     private final String bodyType;  // тип кузова
     private String registrationNumber; // регистр номер
