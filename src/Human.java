@@ -1,9 +1,9 @@
 public class Human {
 
     private int yearOfBirth;
-    String name;
+    private String name;
     private String town;
-    String job;
+    private String job;
 
     public Human(int yearOfBirth, String name, String town, String job) {
         setYearOfBirth(yearOfBirth);
@@ -40,10 +40,26 @@ public class Human {
         }
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getJob() {
+        return job;
+    }
+
+    public void setJob(String job) {
+        this.job = job;
+    }
 
     @Override
     public String toString() {
         return " Привет! Меня зовут " + name + ". Я из города " + town +
-                ". Я родился в " + yearOfBirth + " году. Я работаю на должности " + job + ". Будем знакомы!";
+                ". Я родился в " + yearOfBirth + " году. Я работаю на должности "
+                + job + ". Будем знакомы!";
     }
 }
