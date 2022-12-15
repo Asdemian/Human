@@ -1,0 +1,65 @@
+public class Human {
+
+    private int yearOfBirth;
+    private String name;
+    private String town;
+    private String job;
+
+    public Human(int yearOfBirth, String name, String town, String job) {
+        setYearOfBirth(yearOfBirth);
+        this.name = name;
+        if (this.name == null) {
+            this.name = "Информация не указана";
+        }
+        setTown(town);
+        this.job = job;
+        if (this.job == null) {
+            this.job = "Информация не указана";
+        }
+    }
+
+    public int getYearOfBirth() {
+        return yearOfBirth;
+    }
+
+    public void setYearOfBirth(int yearOfBirth) {
+        this.yearOfBirth = yearOfBirth;
+        if (yearOfBirth < 0) {
+            this.yearOfBirth = 0;
+        }
+    }
+
+    public String getTown() {
+        return town;
+    }
+
+    public void setTown(String town) {
+        this.town = town;
+        if (this.town == null) {
+            this.town = "Информация не указана";
+        }
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getJob() {
+        return job;
+    }
+
+    public void setJob(String job) {
+        this.job = job;
+    }
+
+    @Override
+    public String toString() {
+        return " Привет! Меня зовут " + name + ". Я из города " + town +
+                ". Я родился в " + yearOfBirth + " году. Я работаю на должности "
+                + job + ". Будем знакомы!";
+    }
+}
