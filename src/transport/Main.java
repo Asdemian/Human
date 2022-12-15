@@ -46,14 +46,21 @@ public class Main {
         prohor.printConclusion(paz);
 
 */
-        System.out.println(sorento2021);
+       /* System.out.println(sorento2021);
         System.out.println(hondaCRV);
         System.out.println(paz);
         System.out.println(liaz5292);
         System.out.println(man);
         System.out.println(scania);
-
+*/
+        boolean chek = Data.validate("1234qwerty", "123qwerty", "1238qwerty");
+        if (chek) {
+            System.out.println("Вводимые данные верны");
+        } else
+            System.out.println("Вводимые данные не верны");
     }
+
 }
+
 
 
