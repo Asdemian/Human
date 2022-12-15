@@ -24,4 +24,11 @@ public enum capacity {
         return to;
     }
 
+    @Override
+    public String toString() {
+        return "вместимостью" +
+                " от " + from +
+                " до " + to +
+                " человек. " ;
+    }
 }

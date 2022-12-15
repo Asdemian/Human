@@ -60,12 +60,35 @@ public class Main {
             System.out.println("Вводимые данные не верны");
 
        */
-        System.out.println(mercedesBenz.passDiagnostics());
-        System.out.println(paz.passDiagnostics());
+
+
+        servise(sorento2021, toyotaRAV4, hondaCRV, kiaSportage,
+                liaz4292, paz, nefaz, liaz5292,
+                mercedesBenz, volvo, scania, man);
 
     }
 
+    private static void servise(Transport... transports) {
+        for (Transport transport : transports) {
+            serviseTransport(transport);
+        }
+    }
+
+    private static void serviseTransport(Transport transport) {
+        try {
+            if (!transport.passDiagnostics()) {
+                throw new RuntimeException("Автомобиль " + transport.getBrand() + " " + transport.getModel() + " необходима диагностика.");
+            }
+        } catch (RuntimeException e) {
+            System.out.println(e.getMessage());
+        }
+    }
 }
+
+
+
+
+
 
 
 

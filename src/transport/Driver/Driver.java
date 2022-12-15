@@ -10,7 +10,7 @@ public abstract class Driver<T extends Transport> {
 
     public Driver(String name, boolean hasDriverLicense, int experience) {
         this.name = name;
-        this.hasDriverLicense = hasDriverLicense;
+        setHasDriverLicense(hasDriverLicense);
         this.experience = experience;
     }
 
@@ -23,6 +23,9 @@ public abstract class Driver<T extends Transport> {
     }
 
     public void setHasDriverLicense(boolean hasDriverLicense) {
+        if (hasDriverLicense == false) {
+            throw new IllegalArgumentException("Необходимо указать тип прав!");
+        }
         this.hasDriverLicense = hasDriverLicense;
     }
 

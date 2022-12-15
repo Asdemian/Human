@@ -256,8 +256,11 @@ public class Car extends Transport implements Competing {
 
     @Override
     public boolean passDiagnostics() {
-        return Math.random()>0.5;
+        return Math.random() > 0.5;
     }
+
+
+
 
 
     @Override
