@@ -37,7 +37,8 @@ public abstract class Transport {
     public abstract void stop();
 
     public void printType() {
-
     }
+
+    public abstract boolean passDiagnostics();
 
 }

@@ -53,11 +53,16 @@ public class Main {
         System.out.println(man);
         System.out.println(scania);
 */
-        boolean chek = Data.validate("1234qwerty", "123qwerty", "1238qwerty");
+      /*  boolean chek = Data.validate("1234qwerty", "123qwerty", "1238qwerty");
         if (chek) {
             System.out.println("Вводимые данные верны");
         } else
             System.out.println("Вводимые данные не верны");
+
+       */
+        System.out.println(mercedesBenz.passDiagnostics());
+        System.out.println(paz.passDiagnostics());
+
     }
 
 }
