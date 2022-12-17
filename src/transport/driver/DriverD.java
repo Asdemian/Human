@@ -1,13 +1,13 @@
-package transport.Driver;
+package transport.driver;
 
-import transport.Bus;
+import transport.category.Category;
 
-public class DriverD extends Driver<Bus> {
-    public DriverD(String name, boolean hasDriverLicense, int experience) {
-        super(name, hasDriverLicense, experience);
+public class DriverD extends Driver<Category> {
+    public DriverD(String name, boolean hasDriverLicense,
+                   int experience, Category category) {
+        super(name, hasDriverLicense, experience, category);
     }
-
-    @Override
+   /* @Override
     public void startMove(Bus transport) {
         transport.start();
     }
@@ -21,4 +21,6 @@ public class DriverD extends Driver<Bus> {
     public void refill(Bus transport) {
         System.out.println("Водитель "+getName()+" заправляет автобус " +transport.getBrand());
     }
+
+    */
 }

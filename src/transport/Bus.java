@@ -54,6 +54,10 @@ public class Bus extends Transport implements Competing {
     }
 
     @Override
+    public void repair() {
+        System.out.println("Автобус " + getBrand() + " " + getModel() + " отремонтирован");
+    }
+    @Override
     public boolean passDiagnostics() {
         System.out.println("Автобус " +getBrand()+" модель "+getModel()+" "+ getCapacity() +" В диагностике не требуется.");
         return true;
