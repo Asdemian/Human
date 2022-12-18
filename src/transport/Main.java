@@ -118,6 +118,13 @@ public class Main {
                         liaz4292, paz, nefaz, liaz5292,
                         mercedesBenz, volvo, scania, man
                 );
+
+        ServiceStation serviceStation = new ServiceStation();
+        serviceStation.addCar(sorento2021);
+        serviceStation.addTruck(man);
+        serviceStation.passDiagnostics();
+        serviceStation.passDiagnostics();
+
         for (Transport transport : transports) {
             printInfo(transport);
         }
@@ -132,11 +139,13 @@ public class Main {
         System.out.println();
     }
 
-    private static void servise(Transport... transports) {
+   /* private static void servise(Transport... transports) {
         for (Transport transport : transports) {
             serviseTransport(transport);
         }
     }
+
+    */
 
     private static void serviseTransport(Transport transport) {
         try {
